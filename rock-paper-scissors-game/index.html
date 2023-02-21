@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Hi, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <link rel = "stylesheet" href= "style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src= "script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Rock-Paper-Scissors Game</h1>
+        <p> </p>
+        <div class = "connectBtn"  style="float:right" onclick="connectWallet()">Connect Wallet</div>
+        <p> </p>
+        <div class="container" style="width: 280px">
+            <input type="text" class="text_input" placeholder='Minimum deposit is 0.1 BNB'id="deposit" />
+            <button class="btn" onclick="depositPlayer()">Deposit</button>
+          </div>
+        <p>Select your Hand:</p>
+        <input type="text" placeholder='ENTER rock OR paper OR scissors' id="inputChoice"/>
+        <p>Set your Bet:</p>
+        <input type="text" placeholder='Minimum bet is 0.1 BNB'id="inputBet"/>
+        <p> </p>
+        <div class="container" style="width: 280px">
+            <button class="btn" onclick="play()">Start Game</button>
+            <input type="text" class="text_input" placeholder='Result here: You VS Contract ?'id="result" />
+        </div>
+
+        <p>Withdraw your BNB:</p>
+        <a class = "button2" onclick="withdrawPlayer()">Withdraw</a>
+    </div>
+    
+</body>
+</html>
