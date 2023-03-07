@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=Hi, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Rock Paper Scissor Game</title>
     <link rel = "stylesheet" href= "style.css">
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
@@ -14,23 +14,49 @@
         <h1>Rock-Paper-Scissors Game</h1>
         <p> </p>
         <div class = "connectBtn"  style="float:right" onclick="connectWallet()">Connect Wallet</div>
-        <p> </p>
-        <div class="container" style="width: 280px">
-            <input type="text" class="text_input" placeholder='Minimum deposit is 0.1 BNB'id="deposit" />
-            <button class="btn" onclick="depositPlayer()">Deposit</button>
-          </div>
-        <p>Select your Hand:</p>
-        <input type="text" placeholder='ENTER rock OR paper OR scissors' id="inputChoice"/>
-        <p>Set your Bet:</p>
-        <input type="text" placeholder='Minimum bet is 0.1 BNB'id="inputBet"/>
-        <p> </p>
-        <div class="container" style="width: 280px">
-            <button class="btn" onclick="play()">Start Game</button>
-            <input type="text" class="text_input" placeholder='Result here: You VS Contract ?'id="result" />
+        <p>Get your free 10 $RPS or buy from the market:</p>
+        <div id="outer">
+            <div class="inner">
+                <button class="button-1" onClick="mint()" > Mint</button></div>
+            <div class="inner">
+                <form action="https://app.uniswap.org/#/swap?inputCurrency=MATIC&outputCurrency=0x8603E7061f466F835581bF516d941C213ba2b2Db" method="get" target="_blank">
+                    <button class="button-1" type="submit">Buy</button>
+                </form>
+            </div>
+            <div class="inner">
+                <form action="https://mumbai.polygonscan.com/address/0x8603E7061f466F835581bF516d941C213ba2b2Db#writeContract" method="get" target="_blank">
+                    <button class="button-1" type="submit">Approve</button>
+                </form>
+            </div>
         </div>
-
-        <p>Withdraw your BNB:</p>
-        <a class = "button2" onclick="withdrawPlayer()">Withdraw</a>
+        <p>LIVE STATS: <span id = "stats"></p>
+        <p>Deposit your $RPS:</p>
+        <div class="container" style="width: 280px">
+            <input type="text" class="text_input" placeholder="Any amount" id="depositPlayer" />
+            <button class="btn" onclick="depositPlayer()">Deposit</button>
+        </div>
+        <p>Select your Hand:</p>
+        <p> </p>
+        <div id="outer">
+            <div class="inner">
+                <button class="button-1" onClick="choice(1)" >rock &#9994;</button></div>
+            <div class="inner">
+                <button class="button-1" onClick="choice(2)">paper &#9995;</button></div>
+            <div class="inner">
+                <button class="button-1" onClick="choice(3)">scissors &#9996;</button></div>
+        </div>
+        <p> </p>
+        <p>Set your bet and start a new game:</p>
+        <div class="container" style="width: 280px">
+            <input type="text" class="text_input" placeholder='Double your bet!'id="inputBet"/>
+            <button class="btn" onclick="play()">Start</button>
+        </div>
+        <p>RESULT: <span id = "results"></p>
+        <p>Withdraw: </p>
+        <div class="container" style="width: 280px">
+            <input type="text" class="text_input" placeholder="Any amount from your balance" id="withdraw" />
+            <button class="btn" onclick="withdrawPlayer()">Withdraw</button>
+        </div>
     </div>
     
 </body>
